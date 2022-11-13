@@ -1,21 +1,21 @@
 
 import { useDispatch } from "react-redux";
 import { Label, Input, Form } from './ContactForm.styled';
-import { addContact } from "../../redux/contactsSlice";
+import { contactsReducer } from "../../redux/contactsSlice";
 
 export const ContactForm = () => {
   
   const dispatch = useDispatch();
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    const form = event.target;
-    dispatch(addContact(form.elements.name.value,form.elements.number.value));
-    form.reset();
-  };
+  // const handleSubmit = event => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   dispatch(contactsReducer(form.elements.name.value,form.elements.number.value));
+  //   form.reset();
+  // };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form >
       <Label>
         Name
         <Input
