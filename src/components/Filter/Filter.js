@@ -7,7 +7,7 @@ export const Filter = () => {
   const dispatch = useDispatch();
 
   const onChange = event => {
-    const query = event.target.value;
+    const query = event.target.value.toLowerCase();
     dispatch(setFilter(query));
   };
 
